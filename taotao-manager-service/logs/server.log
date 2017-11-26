@@ -1,0 +1,72 @@
+
+
+[INFO ] 2017-11-15 20:22:24,892 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4ec6a292: startup date [Wed Nov 15 20:22:24 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-11-15 20:22:25,064 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-activemq.xml]
+
+
+[INFO ] 2017-11-15 20:22:26,249 method:org.springframework.jms.connection.SingleConnectionFactory.initConnection(SingleConnectionFactory.java:311)
+Established shared JMS Connection: ActiveMQConnection {id=ID:AFOIG-611211054-60508-1510748546124-1:1,clientId=null,started=false}
+
+
+[INFO ] 2017-11-15 21:34:26,834 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@47db50c5: startup date [Wed Nov 15 21:34:26 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-11-15 21:34:27,153 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-activemq.xml]
+
+
+[INFO ] 2017-11-15 21:34:28,514 method:org.springframework.jms.connection.SingleConnectionFactory.initConnection(SingleConnectionFactory.java:311)
+Established shared JMS Connection: ActiveMQConnection {id=ID:AFOIG-611211054-61532-1510752830672-9:1,clientId=null,started=false}
+
+
+[INFO ] 2017-11-15 21:34:28,633 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6989da5e: startup date [Wed Nov 15 21:34:28 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-11-15 21:34:28,636 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-dao.xml]
+
+
+[INFO ] 2017-11-15 21:34:29,132 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from class path resource [properties/db.properties]
+
+
+[INFO ] 2017-11-15 21:34:31,252 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
+
+
+[INFO ] 2017-11-26 18:41:45,197 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@710726a3: startup date [Sun Nov 26 18:41:45 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-11-26 18:41:45,352 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-activemq.xml]
+
+
+[INFO ] 2017-11-26 18:41:46,148 method:org.springframework.jms.connection.SingleConnectionFactory.initConnection(SingleConnectionFactory.java:311)
+Established shared JMS Connection: ActiveMQConnection {id=ID:AFOIG-611211054-63446-1511692882589-9:1,clientId=null,started=false}
+
+
+[INFO ] 2017-11-26 18:41:46,234 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7dcf94f8: startup date [Sun Nov 26 18:41:46 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-11-26 18:41:46,238 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-dao.xml]
+
+
+[INFO ] 2017-11-26 18:41:46,803 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from file [E:\Eclipse_workspace_project\taotao-manager\taotao-manager-service\target\classes\properties\db.properties]
+
+
+[INFO ] 2017-11-26 18:41:46,804 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from file [E:\Eclipse_workspace_project\taotao-manager\taotao-manager-service\target\classes\properties\resource.properties]
+
+
+[INFO ] 2017-11-26 18:41:49,987 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
