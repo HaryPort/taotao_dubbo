@@ -70,3 +70,35 @@ Loading properties file from file [E:\Eclipse_workspace_project\taotao-manager\t
 
 [INFO ] 2017-11-26 18:41:49,987 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
 {dataSource-1} inited
+
+
+[INFO ] 2017-11-26 23:53:57,925 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@149494d8: startup date [Sun Nov 26 23:53:57 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-11-26 23:53:58,046 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-activemq.xml]
+
+
+[INFO ] 2017-11-26 23:53:58,698 method:org.springframework.jms.connection.SingleConnectionFactory.initConnection(SingleConnectionFactory.java:311)
+Established shared JMS Connection: ActiveMQConnection {id=ID:AFOIG-611211054-52162-1511711632247-9:1,clientId=null,started=false}
+
+
+[INFO ] 2017-11-26 23:53:58,827 method:org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:578)
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@217ed35e: startup date [Sun Nov 26 23:53:58 CST 2017]; root of context hierarchy
+
+
+[INFO ] 2017-11-26 23:53:58,851 method:org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+Loading XML bean definitions from class path resource [spring/applicationContext-dao.xml]
+
+
+[INFO ] 2017-11-26 23:53:59,443 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from file [C:\Users\Administrator\git\taotao_dubbo\taotao-manager-service\target\classes\properties\db.properties]
+
+
+[INFO ] 2017-11-26 23:53:59,447 method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:172)
+Loading properties file from file [C:\Users\Administrator\git\taotao_dubbo\taotao-manager-service\target\classes\properties\resource.properties]
+
+
+[INFO ] 2017-11-26 23:54:01,673 method:com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:655)
+{dataSource-1} inited
