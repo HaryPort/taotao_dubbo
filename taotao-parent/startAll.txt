@@ -1,0 +1,37 @@
+1. 启动dubbo时候启动的注册中心zookeeper, 注意要关闭linux的防火墙。
+启动zookeeper：bin/zkServer.sh start
+关闭zookeeper：bin/zkServer.sh stop
+查看zookeeper状态：bin/zkServer.sh status
+
+2. 启动FastDFS tracker
+启动: /usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf restart
+查看: a. netstat -unltp|grep fdfs, 查看22122 端口的情况
+	 b. 查看日志, tail -100f /opt/fastdfs_tracker/logs/trackerd.log
+添加如下命令到开机启动:
+	a.  vi /etc/rc.d/rc.local
+	b.  /usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf restart
+
+3. 启动FastDFS storage
+启动: /usr/bin/fdfs_storaged /etc/fdfs/storage.conf restart
+查看: a. netstat -unltp|grep fdfs, 查看23001端口监听
+	 b. tail -100f /opt/fastdfs_storage_info/logs/storage.log
+     c. 启动成功后, 可以通过fdfs_monitor查看集群情况, 即storage是否已经注册到tracker服务器中
+     /usr/bin/fdfs_monitor /etc/fdfs/storage.conf
+               查看 是Active状态即可
+     ip_addr = 192.168.158.201  ACTIVE
+
+4. 启动redis-cluster
+启动: 跟启动单台redis节点的command一样, ./redis-server redis-conf
+检查: redis01/redis-cli -p 7002 -c (-c是连接集群的意思, -p连接端口号)
+
+
+5.  启动ActiveMQ
+启动: [root@localhost bin]# ./activemq start
+关闭：  [root@localhost bin]# ./activemq stop
+查看状态： [root@localhost bin]# ./activemq status
+
+
+
+
+
+
