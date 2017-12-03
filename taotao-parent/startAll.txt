@@ -30,8 +30,36 @@
 关闭：  [root@localhost bin]# ./activemq stop
 查看状态： [root@localhost bin]# ./activemq status
 
+6. 安装, 启动nginx
+	a. 首先安装
+	   yum install gcc-c++
+       yum install -y pcre pcre-devel
+       yun install -y zlib zlib-devel
+       yum install -y zlib zlib-devel
+       yum install -y openssl openssl-devel
+	b. 因为是C语言开发的, 所以设置makefile
+	./configure \
+	--prefix=/usr/local/nginx \
+	--pid-path=/var/run/nginx/nginx.pid \
+	--lock-path=/var/lock/nginx.lock \
+	--error-log-path=/var/log/nginx/error.log \
+	--http-log-path=/var/log/nginx/access.log \
+	--with-http_gzip_static_module \
+	--http-client-body-temp-path=/var/temp/nginx/client \
+	--http-proxy-temp-path=/var/temp/nginx/proxy \
+	--http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
+	--http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
+	--http-scgi-temp-path=/var/temp/nginx/scgi
+	
+	c. make
+	d. make install
+	启动: cd /usr/local/nginx, ./nginx
+	关闭: ./nginx -s stop
+	重新加载配置文件: ./nginx -s reload
 
-
-
-
+7. 如何在Linux 复制, 粘贴, 撤销
+   a. 在esc状态下, 使用shift + v, 进入行选模式
+   b. 按上下键选择行数, 选中结束后,按一下y
+   c. 选择需要copy的地方, 按下p复制
+   d. 按下d, 撤销复制
 
