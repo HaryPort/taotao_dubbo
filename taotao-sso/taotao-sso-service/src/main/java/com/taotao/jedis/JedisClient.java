@@ -19,4 +19,6 @@ public interface JedisClient {
 	String hget(String key, String field);
 
 	Long hdel(String key, String... field);
+	
+	Long del(String key);
 }
