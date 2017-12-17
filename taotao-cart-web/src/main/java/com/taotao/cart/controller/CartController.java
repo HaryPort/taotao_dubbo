@@ -102,7 +102,7 @@ public class CartController {
 	
 	@RequestMapping("/cart/update/num/{itemId}/{num}")
 	@ResponseBody
-	public TaotaoResult updateItemNum(@PathVariable Long itemId, Integer num, HttpServletRequest request, HttpServletResponse response) {
+	public TaotaoResult updateItemNum(@PathVariable Long itemId, @PathVariable Integer num, HttpServletRequest request, HttpServletResponse response) {
 		//从cookie中取购物车列表
 		List<TbItem> cartList = getCartItemList(request);
 		//查询对应的商品
@@ -122,9 +122,20 @@ public class CartController {
 	@RequestMapping("/cart/delete/{itemId}")
 	public String deleteCartItem(@PathVariable Long itemId, HttpServletRequest request, HttpServletResponse response) {
 		//从cookie 中取购物车列表
+		List<TbItem> cartList = getCartItemList(request);
+		//查询对应的商品
+		for(TbItem tbItem : cartList) {
+			if(tbItem.getId() == itemId.longValue()) {
+				//找到对应的商品, 删除
+				cartList.remove(tbItem);
+				break;
+			}
+		}
+		//把购物车写入cookie
+		CookieUtils.setCookie(request, response, TT_CART, JsonUtils.objectToJson(cartList), CART_EXPIRE, true);
 		
-		//找到对应的商品, 删除
-		return null;
+		//重定向
+		return "redirect:/cart/cart.html";
 	}
 
 }
