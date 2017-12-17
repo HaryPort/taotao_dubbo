@@ -7,7 +7,7 @@
   </parent>
   <artifactId>taotao-content-interface</artifactId>
   
-  <dependencies>
+ <dependencies>
  	<dependency>
  		<groupId>com.taotao</groupId>
    	 	<artifactId>taotao-manager-pojo</artifactId>
