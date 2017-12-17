@@ -11,6 +11,10 @@
 	a.  vi /etc/rc.d/rc.local
 	b.  /usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf restart
 
+启动好tracker之后, 需要启动nginx来分发请求
+/usr/local/nginx/sbin/nginx
+
+
 3. 启动FastDFS storage
 启动: /usr/bin/fdfs_storaged /etc/fdfs/storage.conf restart
 查看: a. netstat -unltp|grep fdfs, 查看23001端口监听
@@ -19,6 +23,9 @@
      /usr/bin/fdfs_monitor /etc/fdfs/storage.conf
                查看 是Active状态即可
      ip_addr = 192.168.158.201  ACTIVE
+     
+启动好storage之后, 需要启动nginx来分发请求
+/usr/local/nginx/sbin/nginx
 
 4. 启动redis-cluster
 启动: 跟启动单台redis节点的command一样, ./redis-server redis-conf
