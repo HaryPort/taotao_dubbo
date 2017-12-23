@@ -3,30 +3,62 @@ package com.taotao.order.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.utils.CookieUtils;
+import com.taotao.pojo.TbUser;
+import com.taotao.sso.service.UserService;
 /**
  * 判断用户登录拦截器
  * @author Administrator
  *
  */
 public class LoginInterceptor implements HandlerInterceptor{
+	
+	@Value("${TOKEN_KEY}")
+	private String TOKEN_KEY;
+	
+	@Value("${SSO_URL}")
+	private String SSO_URL;
+	
+	@Autowired
+	private UserService userService;
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		
 		//执行handler先执行此方法
 		
 		//1. 从cookie 中取token 信息
+		String token = CookieUtils.getCookieValue(request, TOKEN_KEY);
 		//2. 如果取不到token, 跳转sso登录页面. 需要把当前请求的url作为参数传递给sso, sso登录成功后跳转回请求的页面
-		
-		//3. 取到token, 调用sso 服务, 判断用户是否登录. 
+		//取当前页面的url
+		String requestURL = request.getRequestURL().toString();
+		if(StringUtils.isBlank(token)) {
+			
+			//跳转到登录页面
+			response.sendRedirect(SSO_URL + "/page/login?url=" + requestURL);
+			//拦截
+			return false;
+		}
+		//3. 取到token, 调用sso 服务, 判断用户是否登录.
+		TaotaoResult taotaoResult = userService.getUserByToken(token);
 		//4. 用户未登录, 即没取到用户信息, 跳转到sso登录页面
+		if(taotaoResult.getStatus() != 200) {
+			//跳转到登录页面
+			response.sendRedirect(SSO_URL + "/page/login?url=" + requestURL);
+			return false;
+		}
 		//5. 取到用户信息, 放行
-		
+		//把用户信息放到request中
+		request.setAttribute("user", (TbUser) taotaoResult.getData());
 		//返回值 返回true, 放行. 返回false, 拦截
-		return false;
+		return true;
 	}
 
 	@Override

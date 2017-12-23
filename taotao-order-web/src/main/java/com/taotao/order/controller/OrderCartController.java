@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.taotao.common.utils.CookieUtils;
 import com.taotao.common.utils.JsonUtils;
 import com.taotao.pojo.TbItem;
+import com.taotao.pojo.TbUser;
 
 /**
  * 订单处理页面
@@ -31,9 +32,9 @@ public class OrderCartController {
 	@RequestMapping("/order/order-cart")
 	public String showOderCart(HttpServletRequest request) {
 		//用户必须是登录状态
-		
 		//取用户id
-		
+		TbUser user = (TbUser) request.getAttribute("user");
+		System.out.println(user.getUsername());
 		//根据用户信息取收货地址列表, 使用静态数据模拟
 		
 		//把收货地址列表取出传给页面
