@@ -34,5 +34,5 @@
 	<dubbo:application name="taotao-order-web"/>
 	<dubbo:registry protocol="zookeeper" address="192.168.158.100:2181"/>	
 	<dubbo:reference interface="com.taotao.sso.service.UserService" id="userService" />
-	
+	<dubbo:reference interface="com.taotao.order.service.OrderService" id="orderService" />
 </beans>
